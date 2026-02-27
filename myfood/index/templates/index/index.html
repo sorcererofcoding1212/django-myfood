@@ -1,0 +1,29 @@
+{% extends "index/layout.html" %} {% block content %}
+<div class="mt-8 text-center text-4xl font-semibold text-blue-500">Menu</div>
+<div class="mt-10 flex px-6 grid grid-cols-5">
+  {% for item in item_list %}
+  <div
+    class="p-3 w-fit mb-4 cursor-pointer hover:scale-98 transition-all bg-white shadow-sm border-zinc-200/60 border-2"
+  >
+    <div class="h-56 w-56 rounded">
+      <img
+        class="object-cover rounded h-full w-full"
+        src="{{item.item_photo}}"
+        alt="{{item.item_name}}"
+      />
+    </div>
+    <div class="mt-2 flex justify-between font-medium opacity-90">
+      <div>{{item.item_name}}</div>
+      <div>${{item.item_price}}</div>
+    </div>
+    <a href="{% url "index:about" item.id %}">
+      <button
+        class="text-xs font-semibold mt-4 cursor-pointer bg-blue-500 px-4 py-2 rounded-sm text-white"
+      >
+        View Details
+      </button>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

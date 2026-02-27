@@ -1,0 +1,25 @@
+{% extends "index/layout.html" %} {% block content %}
+<div class="mt-10 flex pl-20">
+  <div class="w-96 h-80">
+    <img
+      class="object-cover h-full w-full"
+      src="{{item.item_photo}}"
+      alt="{{item.item_name}}"
+    />
+  </div>
+  <div class="flex flex-col pl-20 h-80">
+    <div class="text-3xl text-blue-500">{{item.item_name}}</div>
+    <div class="mt-10">
+      <div class="text-lg">{{item.item_desc}}</div>
+    </div>
+    <div class="mt-auto flex justify-between">
+      <button class="py-2 w-22 text-white cursor-pointer rounded-md bg-yellow-400">
+        <a href="{% url "index:edit" item.id %}">Edit</a>
+      </button>
+      <button class="py-2 w-22 text-white cursor-pointer rounded-md bg-red-400">
+        <a href="{% url "index:delete" item.id %}">Delete</a>
+      </button>
+    </div>
+  </div>
+</div>
+{% endblock %}

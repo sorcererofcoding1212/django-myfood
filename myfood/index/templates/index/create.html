@@ -1,0 +1,6 @@
+{% extends "index/layout.html" %} {% block content %}
+<form action="" method="POST">
+  {% csrf_token %} {{ form }}
+  <button value="submit">Create</button>
+</form>
+{% endblock %}
