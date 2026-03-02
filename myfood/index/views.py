@@ -30,7 +30,6 @@ def delete(request, id):
     if request.method == 'POST':
         item.delete()
         return redirect('index:index')
-
     context = {"item": item}
     return render(request, 'index/delete.html', context)
 
