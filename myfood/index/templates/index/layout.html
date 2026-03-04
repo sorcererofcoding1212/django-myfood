@@ -13,6 +13,7 @@
       <div class="font-semibold text-lg italic">MyFood</div>
       <div class="flex gap-x-8 items-center">
         <a href="{% url "index:index" %}">Home</a>
+        <a href="{% url "index:create" %}">Create</a>
         {% if user.is_authenticated %}
           <a href="{% url "users:logout" %}">Logout</a>
           {% else %}
